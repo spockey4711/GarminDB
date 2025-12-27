@@ -331,7 +331,7 @@ class DailySummary(GarminDb.Base, idbutils.DbObject):
     __tablename__ = 'daily_summary'
 
     db = GarminDb
-    table_version = 4
+    table_version = 5
     _col_units = {'hr_min': 'bpm', 'hr_max': 'bpm', 'rhr': 'bpm'}
 
     day = Column(Date, primary_key=True)
@@ -364,6 +364,7 @@ class DailySummary(GarminDb.Base, idbutils.DbObject):
     bb_charged = Column(Integer)
     bb_max = Column(Integer)
     bb_min = Column(Integer)
+    bb_most_recent = Column(Integer)
     description = Column(String)
 
     @hybrid_property

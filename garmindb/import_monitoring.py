@@ -435,6 +435,7 @@ class GarminSummaryData(JsonFileProcessor):
             'bb_charged': self._get_field(json_data, 'bodyBatteryChargedValue', int),
             'bb_max': self._get_field(json_data, 'bodyBatteryHighestValue', int),
             'bb_min': self._get_field(json_data, 'bodyBatteryLowestValue', int),
+            'bb_most_recent': self._get_field(json_data, 'bodyBatteryMostRecentValue', int),
             'description': self._get_field(json_data, 'wellnessDescription'),
         }
         DailySummary.insert_or_update(
